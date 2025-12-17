@@ -1,0 +1,42 @@
+.home {
+  flex: 1;
+  background-color: #0f5c55;
+  padding: 80px;
+  color: white;
+}
+
+.home h1 {
+  font-size: 28px;
+}
+
+.yellow {
+  color: gold;
+}
+
+.white {
+  color: white;
+}
+
+.search-box {
+  margin-top: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  width: 500px;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.search-box button {
+  background-color: #0f5c55;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

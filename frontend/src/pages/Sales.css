@@ -1,0 +1,22 @@
+.sales-page {
+  flex: 1;
+  padding: 30px;
+  background: #f6f7f9;
+}
+
+.sales-page h2 {
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.chart-box {
+  background: white;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+}

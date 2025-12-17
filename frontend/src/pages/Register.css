@@ -1,0 +1,41 @@
+.register-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #134e4a, #0f766e);
+}
+
+.register-card {
+  background: white;
+  padding: 35px;
+  width: 380px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.register-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+}
+
+.register-sub {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background: #134e4a;
+  color: white;
+  border: none;
+  font-weight: bold;
+}

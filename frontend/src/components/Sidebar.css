@@ -1,0 +1,20 @@
+.sidebar {
+  width: 220px;
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(to bottom, #3cff9a, #00bfff);
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}

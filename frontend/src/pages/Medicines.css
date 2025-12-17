@@ -1,0 +1,52 @@
+.medicines-page {
+  flex: 1;
+  background-color: #0f5c55;
+  padding: 30px;
+  color: white;
+}
+
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.medicine-card {
+  background: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.medicine-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.qty-box button {
+  padding: 4px 10px;
+}
+
+.qty-box span {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.add-btn {
+  background-color: #0f5c55;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}

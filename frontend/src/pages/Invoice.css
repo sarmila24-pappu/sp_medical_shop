@@ -1,0 +1,37 @@
+.invoice-wrapper {
+  width: 900px;
+  margin: auto;
+  padding: 15px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid black;
+  padding: 4px;
+  text-align: center;
+}
+
+.total {
+  text-align: right;
+  margin-top: 10px;
+}
