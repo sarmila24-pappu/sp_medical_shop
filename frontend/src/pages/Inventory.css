@@ -1,0 +1,54 @@
+.inventory-page {
+  padding: 30px;
+}
+
+.inventory-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.inventory-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* 🔥 IMPORTANT FIX */
+.inventory-form button {
+  grid-column: span 3;   /* 👈 full width */
+  padding: 12px;
+  background: #0f5c55;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.inventory-form button:hover {
+  background: #0b4641;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+}
+
+img {
+  border-radius: 6px;
+}

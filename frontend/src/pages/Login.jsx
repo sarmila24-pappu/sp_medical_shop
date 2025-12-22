@@ -20,7 +20,7 @@ function Login() {
       password === savedUser.password
     ) {
       localStorage.setItem("isLoggedIn", "true");
-      alert("Login successful ✅");
+      //alert("Login successful ✅");
       navigate("/");
     } else {
       alert("Invalid username or password ❌");

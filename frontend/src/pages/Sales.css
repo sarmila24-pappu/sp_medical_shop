@@ -1,22 +1,75 @@
 .sales-page {
-  flex: 1;
-  padding: 30px;
-  background: #f6f7f9;
+  padding: 20px;
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
 }
 
 .sales-page h2 {
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-select {
-  padding: 8px 12px;
-  margin-bottom: 20px;
+/* SUMMARY CARDS */
+.sales-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.sale-card {
+  padding: 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.sale-card span {
   font-size: 14px;
+  opacity: 0.9;
+}
+
+.sale-card h3 {
+  margin-top: 8px;
+  font-size: 24px;
+}
+
+/* Card colors */
+.blue {
+  background: linear-gradient(135deg, #2196f3, #21cbf3);
+}
+
+.green {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+}
+
+.purple {
+  background: linear-gradient(135deg, #9c27b0, #ce93d8);
+}
+
+.orange {
+  background: linear-gradient(135deg, #ff9800, #ffb74d);
+}
+
+/* CHARTS */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 .chart-box {
-  background: white;
-  width: fit-content;
+  background: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.chart-box h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.chart-container {
+  height: 260px;
 }

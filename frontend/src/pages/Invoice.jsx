@@ -1,37 +1,28 @@
+import { useEffect, useState } from "react";
 import "./Invoice.css";
 
-function randomFrom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
 function Invoice() {
-  const data = JSON.parse(localStorage.getItem("lastInvoice"));
+  const [invoice, setInvoice] = useState(null);
 
-  if (!data) {
-    return <h2>No Invoice Found</h2>;
-  }
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("lastInvoice"));
+    if (data) setInvoice(data);
+  }, []);
 
-  const companies = ["Cipla", "Sun Pharma", "Dr Reddy", "Mankind", "Alkem"];
-  const racks = ["A1", "B2", "C3", "D4"];
-  const packs = ["10 Tab", "15 Tab", "20 Tab"];
+  if (!invoice) return <h3>No Invoice Found</h3>;
 
   return (
-    <div className="invoice-wrapper">
-      <h2 className="center">SP MEDICAL SHOP</h2>
-      <h3 className="center">GST INVOICE</h3>
+    <div className="invoice-page">
+      <h2>SP MEDICAL SHOP</h2>
+      <h4>GST INVOICE</h4>
 
-      <div className="info-row">
-        <div>
-          <p><b>Patient:</b> {data.patient}</p>
-          <p><b>Doctor:</b> {data.doctor}</p>
-        </div>
-        <div>
-          <p><b>Date:</b> {data.date}</p>
-          <p><b>Contact:</b> {data.contact}</p>
-        </div>
-      </div>
+      <p><b>Patient:</b> {invoice.patientName}</p>
+      <p><b>Doctor:</b> {invoice.doctorName}</p>
+      <p><b>Email:</b> {invoice.email}</p>
+      <p><b>Contact:</b> {invoice.contact}</p>
+      <p><b>Date:</b> {invoice.date}</p>
 
-      <table className="invoice-table">
+      <table width="100%">
         <thead>
           <tr>
             <th>S.No</th>
@@ -47,32 +38,31 @@ function Invoice() {
             <th>Amount</th>
           </tr>
         </thead>
+
         <tbody>
-          {data.items.map((i, index) => (
+          {invoice.items.map((i, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{data.date.split(",")[0]}</td>
+              <td>{invoice.date.split(",")[0]}</td>
               <td>{i.name}</td>
-              <td>{randomFrom(companies)}</td>
-              <td>{randomFrom(racks)}</td>
-              <td>{randomFrom(packs)}</td>
-              <td>BT{Math.floor(1000 + Math.random() * 9000)}</td>
-              <td>12/26</td>
+              <td>{i.company}</td>
+              <td>{i.rack}</td>
+              <td>{i.pack}</td>
+              <td>{i.batch}</td>
+              <td>{i.exp}</td>
               <td>{i.qty}</td>
               <td>₹{i.price}</td>
-              <td>₹{i.total}</td>
+              <td>₹{i.amount}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <h3 className="total">Grand Total: ₹{data.grandTotal}</h3>
+      <h3>Grand Total: ₹{invoice.total}</h3>
 
-      <div className="center">
-        <button onClick={() => window.print()}>
-          Print / Download
-        </button>
-      </div>
+      <button onClick={() => window.print()}>
+        Print / Download
+      </button>
     </div>
   );
 }

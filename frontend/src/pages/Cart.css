@@ -1,78 +1,111 @@
 .cart-container {
-  padding: 20px;
+  padding: 30px;
 }
 
+.cart-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Patient form */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-grid input {
   padding: 10px;
-  border-radius: 6px;
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
+/* CART ITEM */
 .cart-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #fff;
   padding: 15px;
-  border-radius: 8px;
   margin-bottom: 15px;
-  gap: 20px;
+  border-radius: 10px;
 }
 
+/* IMAGE FIX 🔥 */
 .img-box {
-  width: 60px;
-  height: 60px;
-  background: #eee;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
 }
 
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔑 IMPORTANT */
+}
+
+/* ITEM INFO */
 .item-info {
   flex: 1;
+  margin-left: 15px;
 }
 
+.item-info h4 {
+  margin: 0;
+}
+
+.item-info p {
+  margin: 5px 0;
+}
+
+/* QTY */
 .qty {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .qty button {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 }
 
+/* REMOVE */
 .remove {
-  color: red;
   background: none;
   border: none;
+  color: red;
   cursor: pointer;
+  margin-left: 10px;
 }
 
+/* FOOTER */
 .cart-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-.clear {
-  padding: 8px 15px;
-  margin-right: 10px;
+.cart-footer button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
 
-.checkout {
-  padding: 8px 20px;
+.cart-footer .clear {
+  background: #ddd;
+}
+
+.cart-footer .checkout {
   background: #0f5c55;
   color: white;
-  border: none;
-  border-radius: 5px;
+  margin-left: 10px;
 }

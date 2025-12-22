@@ -1,0 +1,152 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(90deg, #7c3aed, #2563eb);
+  color: #fff;
+  padding: 16px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header .right span {
+  font-size: 14px;
+  color: #e0e7ff;
+}
+
+.header button {
+  background: linear-gradient(90deg, #f43f5e, #fb7185);
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Layout ===== */
+.container {
+  display: flex;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #22c55e, #06b6d4);
+  padding: 25px 18px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: #022c22;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  background: rgba(255,255,255,0.35);
+  color: #022c22;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #ffffff;
+  color: #2563eb;
+  transform: translateX(8px);
+}
+
+/* ===== Main Content ===== */
+.main {
+  flex: 1;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+}
+
+/* ===== Title ===== */
+.main h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #7c3aed;
+  text-shadow: 1px 1px #e9d5ff;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+table thead {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: white;
+}
+
+table th, 
+table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table tbody tr:nth-child(even) {
+  background: #fff7ed;
+}
+
+table tbody tr:nth-child(odd) {
+  background: #f0fdf4;
+}
+
+table tbody tr:hover {
+  background: #dbeafe;
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+/* ===== Amount ===== */
+table td:last-child,
+table td.amount {
+  font-weight: bold;
+  color: #dc2626;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+}

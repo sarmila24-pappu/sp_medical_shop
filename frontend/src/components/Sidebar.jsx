@@ -4,11 +4,10 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>SP Medical Shop</h2>
-
       <ul>
+        {/* ✅ Dashboard (Inventory inside this) */}
         <li>
-          <Link to="/">Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
 
         <li>
@@ -17,6 +16,9 @@ function Sidebar() {
 
         <li>
           <Link to="/invoice">Invoice</Link>
+        </li>
+        <li>
+          <Link to="/inventory">Inventory</Link>
         </li>
 
         <li>
@@ -27,12 +29,10 @@ function Sidebar() {
           <Link to="/doctors">Doctor List</Link>
         </li>
 
-        {/* ✅ Medicines */}
         <li>
           <Link to="/medicines">Medicines</Link>
         </li>
 
-        {/* ✅ Cart */}
         <li>
           <Link to="/cart">Cart</Link>
         </li>

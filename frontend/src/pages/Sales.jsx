@@ -1,123 +1,111 @@
-import React, { useState } from "react";
+import React from "react";
+import "./Sales.css";
+
 import {
-  PieChart,
-  Pie,
-  Cell,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
   Tooltip,
   Legend,
-} from "recharts";
+} from "chart.js";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+import { Bar, Line } from "react-chartjs-2";
 
-const DATA = {
-  today: [
-    { name: "Medicines", value: 400 },
-    { name: "Consultation", value: 200 },
-    { name: "Others", value: 100 },
-  ],
-  week: [
-    { name: "Medicines", value: 2400 },
-    { name: "Consultation", value: 1398 },
-    { name: "Others", value: 800 },
-  ],
-  month: [
-    { name: "Medicines", value: 5400 },
-    { name: "Consultation", value: 3398 },
-    { name: "Others", value: 1800 },
-  ],
-  year: [
-    { name: "Medicines", value: 15400 },
-    { name: "Consultation", value: 9398 },
-    { name: "Others", value: 5800 },
-  ],
-};
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend
+);
 
-export default function Sales() {
-  const [filter, setFilter] = useState("today");
+function Sales() {
+  /* BAR CHART DATA */
+  const barData = {
+    labels: ["Today", "This Week", "This Month", "This Year"],
+    datasets: [
+      {
+        label: "Sales Amount (₹)",
+        data: [1200, 8200, 25500, 145000],
+        backgroundColor: "#2196f3",
+        borderRadius: 8,
+      },
+    ],
+  };
+
+  /* LINE CHART DATA */
+  const lineData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Monthly Sales",
+        data: [12000, 18000, 15000, 22000, 26000, 24000],
+        borderColor: "#4caf50",
+        backgroundColor: "rgba(76,175,80,0.2)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2 style={{ marginBottom: 20 }}>📊 Sales Dashboard</h2>
+    <div className="sales-page">
 
-      {/* FILTER BUTTONS */}
-      <div style={{ marginBottom: 20 }}>
-        {["today", "week", "month", "year"].map((f) => (
-          <button
-            key={f}
-            onClick={() => setFilter(f)}
-            style={{
-              marginRight: 10,
-              padding: "8px 16px",
-              fontWeight: "bold",
-              background: filter === f ? "#222" : "#ddd",
-              color: filter === f ? "#fff" : "#000",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            {f.toUpperCase()}
-          </button>
-        ))}
-      </div>
+      <h2>📊Sales Dashboard</h2>
 
-      {/* CARDS */}
-      <div style={{ display: "flex", gap: 20, marginBottom: 30 }}>
-        <div style={cardStyle}>
-          <h3>🆕 New Customers</h3>
-          <p style={numStyle}>25</p>
+      {/* SUMMARY CARDS */}
+      <div className="sales-cards">
+        <div className="sale-card blue">
+          <span>Today</span>
+          <h3>₹1,200</h3>
         </div>
-        <div style={cardStyle}>
-          <h3>👥 Clients</h3>
-          <p style={numStyle}>120</p>
+
+        <div className="sale-card green">
+          <span>This Week</span>
+          <h3>₹8,200</h3>
+        </div>
+
+        <div className="sale-card purple">
+          <span>This Month</span>
+          <h3>₹25,500</h3>
+        </div>
+
+        <div className="sale-card orange">
+          <span>This Year</span>
+          <h3>₹1,45,000</h3>
         </div>
       </div>
 
       {/* CHARTS */}
-      <div style={{ display: "flex", gap: 40 }}>
-        {/* PIE */}
-        <PieChart width={350} height={300}>
-          <Pie
-            data={DATA[filter]}
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            dataKey="value"
-            label
-          >
-            {DATA[filter].map((_, i) => (
-              <Cell key={i} fill={COLORS[i % COLORS.length]} />
-            ))}
-          </Pie>
-          <Tooltip />
-          <Legend />
-        </PieChart>
+      <div className="charts-grid">
 
-        {/* BAR */}
-        <BarChart width={400} height={300} data={DATA[filter]}>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
-        </BarChart>
+        <div className="chart-box">
+          <h3>Sales Analytics (Bar Chart)</h3>
+          <div className="chart-container">
+            <Bar data={barData} options={options} />
+          </div>
+        </div>
+
+        <div className="chart-box">
+          <h3>Monthly Trend (Line Chart)</h3>
+          <div className="chart-container">
+            <Line data={lineData} options={options} />
+          </div>
+        </div>
+
       </div>
     </div>
   );
 }
 
-const cardStyle = {
-  background: "#f4f4f4",
-  padding: 20,
-  width: 200,
-  borderRadius: 8,
-  textAlign: "center",
-};
-
-const numStyle = {
-  fontSize: 28,
-  fontWeight: "bold",
-};
+export default Sales;

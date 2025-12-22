@@ -1,12 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Topbar.css";
 
 function Topbar() {
-  const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  // 🔥 THIS IS THE KEY
   useEffect(() => {
     const loggedIn = localStorage.getItem("isLoggedIn");
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -18,22 +16,13 @@ function Topbar() {
     }
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    setUser(null);
-    navigate("/login");
-  };
-
   return (
     <div className="topbar">
-      <h2>SP Medical Shop</h2>
+      <h1>SP Medical Shop</h1>
 
       <div className="topbar-auth">
         {user ? (
-          <>
-            <span>Welcome, {user.username}</span>
-            <button onClick={handleLogout}>Logout</button>
-          </>
+          <span>Welcome, {user.username}</span>
         ) : (
           <>
             <Link to="/login">Login</Link> |{" "}

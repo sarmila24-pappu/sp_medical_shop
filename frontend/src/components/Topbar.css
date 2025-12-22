@@ -1,14 +1,14 @@
 .topbar {
   background-color: #0f5c55;
-  height: 60px;
-  padding: 0 25px;
+  height: 100px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color:whitesmoke;
 }
 
-.topbar-auth {
+.ytopbar-auth {
   color: blue;
   font-weight: bold;
 }

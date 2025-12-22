@@ -1,37 +1,89 @@
-.invoice-wrapper {
-  width: 900px;
-  margin: auto;
-  padding: 15px;
-  background: white;
-  color: black;
-  border: 1px solid black;
-  font-family: Arial, sans-serif;
+.inventory-page {
+  padding: 30px;
 }
 
-.center {
-  text-align: center;
+/* FORM */
+.inventory-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+  align-items: center;
 }
 
-.info-row {
+.inventory-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* SAVE BUTTON */
+.inventory-form button {
+  grid-column: span 3;
+  padding: 12px;
+  background: #0f5c55;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.inventory-form button:hover {
+  background: #0b4641;
+}
+
+/* 🔥 IMAGE PREVIEW FIX (IMPORTANT) */
+.image-preview {
+  grid-column: span 3;
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  max-height: 120px;   /* 🔑 LIMIT HEIGHT */
+  overflow: hidden;
 }
 
-.invoice-table {
+.image-preview img {
+  max-width: 120px;    /* 🔑 LIMIT WIDTH */
+  max-height: 120px;   /* 🔑 LIMIT HEIGHT */
+  object-fit: contain; /* 🔑 NO STRETCH */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* TABLE */
+table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.invoice-table th,
-.invoice-table td {
-  border: 1px solid black;
-  padding: 4px;
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
   text-align: center;
 }
 
-.total {
-  text-align: right;
-  margin-top: 10px;
+th {
+  background: linear-gradient(to right, #f59e0b, #ef4444);
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background: #fff7ed;
+}
+
+tbody tr:nth-child(odd) {
+  background: #f0fdf4;
+}
+
+td img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
 }
